@@ -5,6 +5,7 @@ public class Main
 	{
 	static Scanner userStringInput = new Scanner(System.in);
 	static Scanner userIntInput = new Scanner(System.in);
+	static Scanner userInput = new Scanner (System.in);
 	static String name;
 	static String dummy;
 	static int className;
@@ -43,7 +44,7 @@ public class Main
 	
 	public static void count()
 		{
-		System.out.println("The count is " + ballCount + " - " + strikeCount);
+		System.out.println("\nThe count is " + ballCount + " - " + strikeCount);
 		runs();
 		}
 	
@@ -52,7 +53,7 @@ public class Main
 		if(strikeCount == 3)
 			{
 			outs++;
-			System.out.println("You struck out\n\nThere are now " + outs + " out(s)");
+			System.out.println("\nYou struck out\n\nThere are now " + outs + " out(s)");
 			ballCount = 0;
 			strikeCount = 0;
 			}
@@ -99,11 +100,13 @@ public class Main
 		System.out.println("What hitter would you like to use?\n\n1) Aaron Judge\n2) Bryce Harper\n3) Kyle Tucker");
 		hitter = userIntInput.nextInt();
 		System.out.println(bullPen.get(pitcher-1).getName() + " is going to pitch against " + roster.get(hitter-1).getPlayerName());
+		System.out.println("Press enter to continue");
+		dummy = userInput.nextLine();
 		}
 
 	public static void play()
 		{
-		System.out.println("Hi, " + name + " do you want to play a baseball hitting game? \n\n1) Yes\n2) No");
+		System.out.println("Hi " + name + ", do you want to play a baseball hitting game? \n\n1) Yes\n2) No");
 		int play = userIntInput.nextInt();
 		
 		if(play == 2)
@@ -122,7 +125,7 @@ public class Main
 	
 	public static void playBall()
 		{
-		System.out.println("You can either\n\n1) Swing\n2) Take a Pitch");
+		System.out.println("\nYou can either\n\n1) Swing\n2) Take a Pitch");
 		int firstPitch = userIntInput.nextInt();
 		if(pitcher == 1 && hitter == 1 && firstPitch == 1)
 			{
@@ -269,57 +272,49 @@ public class Main
         int p5 = p4 + bullPen.get(0).getp5Frequency();
         int p6 = p5 + bullPen.get(0).getp6Frequency();
 		
-		System.out.println(p1);
-		System.out.println(p2);
-		System.out.println(p3);
-		System.out.println(p4);
-		System.out.println(p5);
-		System.out.println(p6);
-        
 		int pitch = ((int)(Math.random()*1000));
-		System.out.println(pitch);
 		
 		if(pitch >= 0 && pitch <p1)
 			{
-			System.out.println("Trevor Bauer is going to throw a 4 Seam Fastball");
+			System.out.println("\nTrevor Bauer is going to throw a 4 Seam Fastball");
 			System.out.println("Press enter to continue");
-			dummy = userStringInput.nextLine();
+			dummy = userInput.nextLine();
 			tbFastballStrike();
 			}
 		else if(pitch >= p1 && pitch <p2)
 			{
-			System.out.println("Trevor Bauer is going to throw a cutter");
+			System.out.println("\nTrevor Bauer is going to throw a cutter");
 			System.out.println("Press enter to continue");
-			dummy = userStringInput.nextLine();			
+			dummy = userInput.nextLine();			
 			tbCutterStrike();
 			}
 			
 		else if(pitch >= p2 && pitch <p3)
 			{
-			System.out.println("Trevor Bauer is going to throw a slider");
+			System.out.println("\nTrevor Bauer is going to throw a slider");
 			System.out.println("Press enter to continue");
-			dummy = userStringInput.nextLine();			
+			dummy = userInput.nextLine();			
 			tbSliderStrike();
 			}
 		else if(pitch >= p3 && pitch <p4)
 			{
-			System.out.println("Trevor Bauer is going to throw a curveball");
+			System.out.println("\nTrevor Bauer is going to throw a curveball");
 			System.out.println("Press enter to continue");
-			dummy = userStringInput.nextLine();			
+			dummy = userInput.nextLine();			
 			tbCurveballStrike();
 			}
 		else if(pitch >= p4 && pitch <p5)
 			{
-			System.out.println("Trevor Bauer is going to throw a sinker");
+			System.out.println("\nTrevor Bauer is going to throw a sinker");
 			System.out.println("Press enter to continue");
-			dummy = userStringInput.nextLine();			
+			dummy = userInput.nextLine();			
 			tbSinkerStrike();
 			}
 		else if(pitch >= p5 && pitch <=p6)
 			{
-			System.out.println("Trevor Bauer is going to throw a changeup");
+			System.out.println("\nTrevor Bauer is going to throw a changeup");
 			System.out.println("Press enter to continue");
-			dummy = userStringInput.nextLine();			
+			dummy = userInput.nextLine();			
 			tbChangeupStrike();
 			}
 		}
@@ -461,7 +456,7 @@ public class Main
 		
 		if(onBase < roster.get(0).getOnBaseAvg())
 			{
-			System.out.println("You got a hit!!");
+			System.out.println("\nYou got a hit!!");
 			ballCount = 0;
 			strikeCount = 0;
 			bases++;
@@ -660,7 +655,7 @@ public class Main
 		
 		if(onBase < roster.get(1).getOnBaseAvg())
 			{
-			System.out.println("You got a hit!!");
+			System.out.println("\nYou got a hit!!");
 			ballCount = 0;
 			strikeCount = 0;
 			bases++;
@@ -859,7 +854,7 @@ public class Main
 		
 		if(onBase < roster.get(3).getOnBaseAvg())
 			{
-			System.out.println("You got a hit!!");
+			System.out.println("\nYou got a hit!!");
 			ballCount = 0;
 			strikeCount = 0;
 			bases++;
