@@ -44,7 +44,7 @@ public class Main
 	
 	public static void count()
 		{
-		System.out.println("\nThe count is " + ballCount + " - " + strikeCount);
+		System.out.println("The count is " + ballCount + " - " + strikeCount);
 		runs();
 		}
 	
@@ -457,10 +457,18 @@ public class Main
 		if(onBase < roster.get(0).getOnBaseAvg())
 			{
 			System.out.println("\nYou got a hit!!");
-			ballCount = 0;
-			strikeCount = 0;
 			bases++;
 			}
+		
+		else
+			{
+			System.out.println("You made contact, but the fielder made a good play and got you out!!");
+			outs++;
+			System.out.println("\nThere are now " + outs + " out(s)\n");
+			}
+		
+		ballCount = 0;
+		strikeCount = 0;
 		}
 	
 	public static void soPitch()
@@ -656,10 +664,18 @@ public class Main
 		if(onBase < roster.get(1).getOnBaseAvg())
 			{
 			System.out.println("\nYou got a hit!!");
-			ballCount = 0;
-			strikeCount = 0;
 			bases++;
 			}
+		
+		else
+			{
+			System.out.println("You made contact, but the fielder made a good play and got you out!!");
+			outs++;
+			System.out.println("\nThere are now " + outs + " out(s)\n");
+			}
+	
+		ballCount = 0;
+		strikeCount = 0;
 		}
 	
 	public static void cbPitch()
@@ -852,12 +868,20 @@ public class Main
 		{
 		int onBase = ((int)(Math.random()*1000));
 		
-		if(onBase < roster.get(3).getOnBaseAvg())
+		if(onBase < roster.get(2).getOnBaseAvg())
 			{
 			System.out.println("\nYou got a hit!!");
-			ballCount = 0;
-			strikeCount = 0;
 			bases++;
 			}
+		
+		else
+			{
+			System.out.println("You made contact, but the fielder made a good play and got you out!!");
+			outs++;
+			System.out.println("\nThere are now " + outs + " out(s)\n");
+			}
+	
+		ballCount = 0;
+		strikeCount = 0;
 		}
 	}
