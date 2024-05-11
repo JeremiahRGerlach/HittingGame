@@ -235,5 +235,4 @@ public class Pitcher
 			}
 		return resultPitcher;
 		}
-	
 	}

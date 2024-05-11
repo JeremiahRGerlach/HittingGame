@@ -61,6 +61,7 @@ public class Hitter
 			resultHitter.name = "Kyle Tucker";
 			resultHitter.batAvg = 257;
 			resultHitter.onBaseAvg = 330;
+			break;
 			}
 		
 		return resultHitter;

@@ -113,6 +113,7 @@ public class Main
 			System.out.println("Thats ok, maybe next time!");
 			System.exit(0);
 			}
+		
 		else if(play != 1 && play !=2)
 			{
 			System.out.println("Please pick a number 1 or 2");
